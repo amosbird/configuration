@@ -13,3 +13,7 @@ gpg --recipient amosbird@gmail.com --encrypt vivaldi.tar.gz
 rm vivaldi.tar.gz
 rm -rf vivaldi
 rm -rf .weechat
+
+cp ~/.spacemacs spacemacs
+rsync -a ~/.emacs.d/private/ spacemacs/
+
