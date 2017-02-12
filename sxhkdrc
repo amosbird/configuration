@@ -1,0 +1,45 @@
+mod3+f
+  copyq toggle
+mod3+p 
+  teiler --quickcopy area
+mod3+shift+p 
+  teiler --quick area
+mod3+t 
+  teiler --paste
+mod3+r 
+  teiler --togglecast
+mod3+g 
+  fish -c 'url "www.google.com/search?q="'
+mod3+s 
+  fish -c 'url "scholar.google.com/schola'r?q="
+super+z
+  slock
+control+8
+  /home/amos/scripts/dead
+control+0
+  /home/amos/scripts/tele
+super+s
+  urxvt -e /home/amos/bin/fish
+control+alt+s
+  /home/amos/scripts/showshell.sh 0
+control+alt+l
+  /home/amos/scripts/showshell.sh 1
+super+Home
+  /usr/bin/xrandr --output eDP1 --primary --mode 1600x900 --pos 0x0 --output DP2-2 --off --output DP2 --off
+super+End
+  /usr/bin/xrandr --output eDP1 --off --output DP2 --off --output DP2-2 --primary --mode 1920x1080 --pos 0x0
+super+Insert
+  /usr/bin/xrandr --output eDP1 --off --output DP2-2 --off --output DP2 --primary --mode 1920x1080 --pos 0x0
+super+Delete
+  /usr/bin/lxrandr
+XF86AudioLowerVolume
+  pulseaudio-ctl down 3
+XF86AudioRaiseVolume
+  pulseaudio-ctl up 3
+XF86AudioMute
+  pulseaudio-ctl mute
+XF86MonBrightnessDown
+  xbacklight -5
+XF86MonBrightnessUp
+  xbacklight +5
+

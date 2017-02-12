@@ -1,22 +1,21 @@
-#!/usr/bin/env fish
+#!/usr/bin/env bash
 
-if test (count $argv) != 0
-  exit 1
-  rsync -a --exclude='logs' ~/.weechat .
-  tar czf weechat.tar.gz .weechat
-  rm weechat.tar.gz.gpg
-  gpg --recipient amosbird@gmail.com --encrypt weechat.tar.gz
-  rm weechat.tar.gz
+rsync -a --exclude='logs' ~/.weechat .
+tar czf weechat.tar.gz .weechat
+rm weechat.tar.gz.gpg
+gpg --recipient amosbird@gmail.com --encrypt weechat.tar.gz
+rm weechat.tar.gz
 
-  rsync -a --exclude='Cache' --exclude='Media Cache' --exclude='Local Storage' ~/.config/vivaldi .
-  tar czf vivaldi.tar.gz vivaldi
-  rm vivaldi.tar.gz.gpg
-  gpg --recipient amosbird@gmail.com --encrypt vivaldi.tar.gz
-  rm vivaldi.tar.gz
-  rm -rf vivaldi
-  rm -rf .weechat
-end
+rsync -a --exclude='Cache' --exclude='Media Cache' --exclude='Local Storage' ~/.config/vivaldi .
+tar czf vivaldi.tar.gz vivaldi
+rm vivaldi.tar.gz.gpg
+gpg --recipient amosbird@gmail.com --encrypt vivaldi.tar.gz
+rm vivaldi.tar.gz
+rm -rf vivaldi
+rm -rf .weechat
 
-cp ~/.spacemacs spacemacs
-rsync -a ~/.emacs.d/private/ spacemacs/
-
+cp ~/.config/sxhkd/sxhkdrc .
+cp ~/.i3/config i3config
+cp ~/.xprofile .
+cp ~/.Xresources .
+cp ~/.Xmodmap .

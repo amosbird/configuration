@@ -1,0 +1,22 @@
+#!/bin/bash
+export XDG_RUNTIME_DIR=/run/user/`id -u`
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx
+export AWT_TOOLKIT=XToolkit
+
+xmodmap /home/amos/.Xmodmap
+xcape -e 'Alt_L:Control_L=Right;Control_L:Alt_L=Left;Control_L=Escape;Hyper_L=Shift_L|Insert'
+xset dpms force on
+xset s off
+xset b off
+synclient CoastingSpeed=0 HorizTwoFingerScroll=1
+pulseaudio &
+compton &
+unclutter --timeout 1 --jitter 10 -b
+fcitx
+#export GTK_IM_MODULE=ibus
+#export XMODIFIERS=@im=ibus
+#export QT_IM_MODULE=ibus
+#ibus-daemon -d -x
+#LC_CTYPE=zh_CN.UTF-8 emacs --daemon

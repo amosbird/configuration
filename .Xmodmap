@@ -1,0 +1,3 @@
+keycode 255 = Hyper_L Hyper_L Hyper_L Hyper_L
+remove Mod4 = Hyper_L
+add Mod3 = Hyper_L
