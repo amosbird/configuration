@@ -1,0 +1,4 @@
+* Tasks
+** TODO figure out how to get active window faster
+   [2017-02-11 Sat]
+   [[file:~/dotfiles/scripts/popleft.py::#%20Create%20the%20Connection%20object%20that%20can%20be%20used%20to%20send%20commands%20and%20subscribe]]

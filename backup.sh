@@ -5,13 +5,6 @@ tar czf weechat.tar.gz .weechat
 rm weechat.tar.gz.gpg
 gpg --recipient amosbird@gmail.com --encrypt weechat.tar.gz
 rm weechat.tar.gz
-
-rsync -a --exclude='Cache' --exclude='Media Cache' --exclude='Local Storage' ~/.config/vivaldi .
-tar czf vivaldi.tar.gz vivaldi
-rm vivaldi.tar.gz.gpg
-gpg --recipient amosbird@gmail.com --encrypt vivaldi.tar.gz
-rm vivaldi.tar.gz
-rm -rf vivaldi
 rm -rf .weechat
 
 cp ~/.config/sxhkd/sxhkdrc .
@@ -19,3 +12,7 @@ cp ~/.i3/config i3config
 cp ~/.xprofile .
 cp ~/.Xresources .
 cp ~/.Xmodmap .
+cp ~/urxvt-perls/osc-xterm-clipboard .
+
+mkdir -p scripts
+rsync -a ~/scripts/ scripts/

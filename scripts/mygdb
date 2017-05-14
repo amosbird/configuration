@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+gdb --interpreter mi2 --ex "target remote | sudo docker exec -i `docker ps  | grep dsql | awk '{print $1}'` gdbserver - --attach `pgrep impalad`"

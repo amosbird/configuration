@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+urxvt -title nobida201 -e ssh fe80::1a66:daff:fee7:aabd%zt0 -t "tmux new -s amos; or tmux a -t amos" &
+urxvt -title nobida201 -e ssh fe80::1a66:daff:fee7:aabd%zt0 -t "emacsclient -c" &

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo ip r d default
+sudo ip r a default via 172.26.133.85 metric 1

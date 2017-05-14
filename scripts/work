@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+urxvt -title nobida201 -e ssh 201.nobida.cn -t "\
+tmux new -d -s amos;\
+tmux new -d -s emacs emacsclient -c;\
+tmux a -t emacs;\
+"

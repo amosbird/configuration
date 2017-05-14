@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if ip r | grep -q 10.0.0.0.\*tun0
+then
+  sudo systemctl stop openvpn@ict.service
+  # sudo systemctl start openvpn@amos.service
+else
+  # sudo systemctl stop openvpn@amos.service
+  sudo systemctl start openvpn@ict.service
+fi

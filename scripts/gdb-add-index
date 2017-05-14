@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+GDB=${GDB:=gdb}
+OBJCOPY=${OBJCOPY:=objcopy}
+
+myname="${0##*/}"
+
+if test $# != 1; then
+    echo "usage: $myname FILE" 1>&2
+    exit 1
+fi
+
+file="$1"
+
+if test ! -r "$file"; then
+    echo "$myname: unable to access: $file" 1>&2
+    exit 1
+fi
+
+dir="${file%/*}"
+test "$dir" = "$file" && dir="."
+index="${file}.gdb-index"
+
+rm -f $index
+# Ensure intermediate index file is removed when we exit.
+trap "rm -f $index" 0
+
+$GDB --batch -nx -iex 'set auto-load no' \
+    -ex "file $file" -ex "save gdb-index $dir" || {
+    # Just in case.
+    status=$?
+    echo "$myname: gdb error generating index for $file" 1>&2
+    exit $status
+}
+
+# In some situations gdb can exit without creating an index.  This is
+# not an error.
+# E.g., if $file is stripped.  This behaviour is akin to stripping an
+# already stripped binary, it's a no-op.
+status=0
+
+if test -f "$index"; then
+    $OBJCOPY --add-section .gdb_index="$index" \
+  --set-section-flags .gdb_index=readonly "$file" "$file"
+    status=$?
+else
+    echo "$myname: No index was created for $file" 1>&2
+    echo "$myname: [Was there no debuginfo? Was there already an index?]" 1>&2
+fi
+
+exit $status

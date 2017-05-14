@@ -11,19 +11,23 @@ mod3+r
 mod3+g 
   fish -c 'url "www.google.com/search?q="'
 mod3+s 
-  fish -c 'url "scholar.google.com/schola'r?q="
+  fish -c 'url "scholar.google.com/scholar?q="'
 super+z
   slock
 control+8
   /home/amos/scripts/dead
+control+9
+  /home/amos/scripts/showdict.sh
 control+0
   /home/amos/scripts/tele
 super+s
   urxvt -e /home/amos/bin/fish
 control+alt+s
-  /home/amos/scripts/showshell.sh 0
+  /home/amos/scripts/showshell.sh 2
 control+alt+l
   /home/amos/scripts/showshell.sh 1
+control+alt+h
+  /home/amos/scripts/showshell.sh 0
 super+Home
   /usr/bin/xrandr --output eDP1 --primary --mode 1600x900 --pos 0x0 --output DP2-2 --off --output DP2 --off
 super+End
@@ -42,4 +46,6 @@ XF86MonBrightnessDown
   xbacklight -5
 XF86MonBrightnessUp
   xbacklight +5
+control+semicolon
+  fish -c 'winfocus; rofi -combi-modi run,ssh -modi combi -show combi'
 

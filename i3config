@@ -85,13 +85,13 @@
   bindsym $mod+Shift+r restart
   bindsym $mod+Shift+x exec "xrdb -merge $HOME/.Xresources"
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-  bindsym control+semicolon exec "fish -c 'winfocus; rofi -combi-modi run,ssh -modi combi -show combi'"
 
 
 # Workspace-Related Bindings
   bindsym control+mod1+f workspace $workspace1
   bindsym control+mod1+o workspace $workspace2
   bindsym control+mod1+e workspace $workspace3
+  bindsym control+mod1+d workspace $workspace4
   bindsym control+mod1+t workspace $workspace4
   bindsym control+mod1+u workspace $workspace5
   bindsym control+mod1+i workspace $workspace6
@@ -109,6 +109,7 @@
   bindsym control+mod1+Shift+f move container to workspace $workspace1
   bindsym control+mod1+Shift+o move container to workspace $workspace2
   bindsym control+mod1+Shift+e move container to workspace $workspace3
+  bindsym control+mod1+Shift+d move container to workspace $workspace4
   bindsym control+mod1+Shift+t move container to workspace $workspace4
   bindsym control+mod1+Shift+u move container to workspace $workspace5
   bindsym control+mod1+Shift+i move container to workspace $workspace6
@@ -126,8 +127,10 @@
 # Program Workspaces
   assign [class="Firefox"] $workspace1
   assign [class="Vivaldi*"] $workspace1
+  assign [class="qutebrowser*"] $workspace1
   for_window [class="Firefox"] focus
   for_window [class="Vivaldi*"] focus
+  for_window [class="qutebrowser*"] focus
   assign [class="URxvt" title="mutt"] $workspace2
   for_window [class="URxvt" title="mutt"] focus
   assign [class="URxvt" instance="mail"] $workspace2
@@ -138,8 +141,8 @@
   for_window [class="Emacs" instance="emacs"] focus
   assign [class="URxvt" instance="workspace"] $workspace3
   for_window [class="URxvt" instance="workspace"] focus
-  assign [class="URxvt" title="nobida201"] $workspace4
-  for_window [class="URxvt" title="nobida201"] focus
+  assign [class="URxvt" title="nobida*"] $workspace4
+  for_window [class="URxvt" title="nobida*"] focus
   assign [class="URxvt" title="ubuntu"] $workspace5
   for_window [class="URxvt" title="ubuntu"] focus
   assign [class="Nxplayer.bin"] $workspace5
@@ -148,13 +151,15 @@
   for_window [class="jetbrains-idea"] focus
   assign [class="Eclipse"] $workspace7
   for_window [class="Eclipse"] focus
-  assign [class="VirtualBox" title="win7.*1"] $workspace8
-  assign [class="VirtualBox" title="win7.*2"] $workspacep
+  assign [class="VirtualBox" title="w7.*1"] $workspace8
+  assign [class="VirtualBox" title="w7.*2"] $workspacep
   for_window [class="VirtualBox"] focus
   assign [class="Mendeleydesktop.x86_64"] $workspace9
   for_window [class="Mendeleydesktop.x86_64"] focus
   assign [class="URxvt" title="weechat"] $workspace0
   for_window [class="URxvt" title="weechat"] focus
+  assign [class="URxvt" title="ranger"] $workspace7
+  for_window [class="URxvt" title="ranger"] focus
   assign [class="Zathura" title="/tmp/mozilla_amos0/"] $workspace11
   for_window [class="Zathura" title=/tmp/mozilla_amos0/] focus
 # Floating
@@ -172,7 +177,6 @@
   focus_follows_mouse off
   for_window [instance="^urxvt_scratchpad"] move scratchpad
   for_window [instance="^stardict"] move scratchpad
-  bindsym control+9 [instance="^stardict"] scratchpad show
 # color defines for zenburn styled i3
   set $bg     #2c2c2e
   set $fg     #9f9f9f
@@ -212,8 +216,5 @@
     }
   }
 
-# Startup Programs
-  exec_always --no-startup-id urxvt -name urxvt_scratchpad -e /home/amos/bin/fish
-  exec_always --no-startup-id urxvt -name stardict -e sdcv
+# bg picture
   exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper.jpg
-  # exec --no-startup-id /home/amos/scripts/autostart

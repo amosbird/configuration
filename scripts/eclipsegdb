@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker exec -i  `docker ps  | grep dsql | awk '{print $1}'` gdb $*

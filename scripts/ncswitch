@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+sudo systemctl stop create_ap.service
+sudo ifconfig wlp3s0 down
+sudo ip a flush dev wlp3s0
+sudo ifconfig enp0s25 down
+sudo ip a flush dev enp0s25
+sudo netctl stop-all
+sudo ip r d default
+sudo ip a d dev enp0s25
+
+sudo netctl start "$1"
+if [[ $1 = ethernet-* ]]
+then
+  sudo systemctl start create_ap.service
+fi

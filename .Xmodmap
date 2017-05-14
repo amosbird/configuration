@@ -1,3 +1,24 @@
-keycode 255 = Hyper_L Hyper_L Hyper_L Hyper_L
+keycode 66 = Caps_Lock
+keycode 207 = Hyper_L
+keycode 247 = Mode_switch
 remove Mod4 = Hyper_L
 add Mod3 = Hyper_L
+
+keycode  11 = 2 at ampersand at 2 at 2 at
+keycode  12 = 3 numbersign semicolon numbersign 3 numbersign 3 numbersign
+keycode  13 = 4 dollar colon dollar 4 dollar 4 dollar
+keycode  24 = q Q grave Q q Q q Q
+keycode  38 = a A asciitilde A a A a A
+keycode  52 = z Z ampersand Z z Z z Z
+keycode  25 = w W slash W w W w W
+keycode  39 = s S question S s S s S
+keycode  53 = x X equal X x X x X
+keycode  26 = e E braceleft E e E e E
+keycode  27 = r R braceright R r R r R
+keycode  40 = d D bracketleft D d D d D
+keycode  41 = f F bracketright F f F f F
+keycode  54 = c C plus X y Y z Z
+keycode  55 = v V bar V v V v V
+keycode  28 = t T quotedbl T t T t T
+keycode  42 = g G apostrophe G g G g G
+keycode  56 = b B backslash B b B b B

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/xinput --set-prop 'pointer:Lite-On Technology Corp. ThinkPad USB Keyboard with TrackPoint' 'libinput Accel Speed' 1

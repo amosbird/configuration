@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+vboxmanage controlvm f487f6ef-2b4e-47d1-962a-8c0473b4bc6b keyboardputscancode 9d 9d b8 b8
+vboxmanage controlvm 7372d72a-f246-419f-aadf-90c520a05351 keyboardputscancode 9d 9d b8 b8

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+tmux new -s amos -d
+urxvt -name workspace -e tmux new -A -s emacs em

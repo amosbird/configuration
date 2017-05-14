@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+copyq &
+vivaldi &
+wee &
+LC_CTYPE=zh_CN.UTF-8 emacs --daemon
+LC_CTYPE=zh_CN.UTF-8 emacs --daemon=mail
+em &
+mail &
+win &

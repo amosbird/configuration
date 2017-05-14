@@ -4,17 +4,17 @@ export GTK_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
 export AWT_TOOLKIT=XToolkit
-
 xmodmap /home/amos/.Xmodmap
-xcape -e 'Alt_L:Control_L=Right;Control_L:Alt_L=Left;Control_L=Escape;Hyper_L=Shift_L|Insert'
+xcape -e 'Alt_L:Control_L=Right;Control_L:Alt_L=Left;Alt_L:Shift_L=Return;Control_L=Escape;Control_L:Shift_L=Return;Shift_L=Return;Hyper_L=Shift_R|Insert;Mode_switch=BackSpace;Alt_L:Mode_switch=BackSpace'
 xset dpms force on
 xset s off
 xset b off
 synclient CoastingSpeed=0 HorizTwoFingerScroll=1
-pulseaudio &
-compton &
+pulseaudio -D
+compton --inactive-opacity 0.9 -b
 unclutter --timeout 1 --jitter 10 -b
 fcitx
+sxhkd &
 #export GTK_IM_MODULE=ibus
 #export XMODIFIERS=@im=ibus
 #export QT_IM_MODULE=ibus

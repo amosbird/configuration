@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+urxvt -title ubuntu -e ssh ubuntu -t "tmux new -s amos || tmux a -t amos" &
+urxvt -title ubuntu -e ssh ubuntu -t "emacsclient -c" &
